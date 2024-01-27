@@ -1,0 +1,19 @@
+#feed-posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    #posts{
+        // border-right: 2px dashed black;
+        min-width: 70vw;
+    }
+    #info{
+        padding: 5px;
+        border-left: 2px dashed black;
+    }
+    @media screen and (max-width:665px) {
+        #info{
+            display: none;
+        }
+    }
+}

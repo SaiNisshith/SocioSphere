@@ -1,0 +1,30 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5em;
+    background-color: rgb(25, 42, 49);
+    color: white;
+    h1{
+        padding-left: 0.3em;
+        margin: 0px;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items: center;
+        list-style: none;
+        li{
+            margin: 0em 0.5em;
+            font-size: 1.3em;
+            a{
+                color: whitesmoke;
+                text-decoration-line: none;
+            }
+        }
+    }
+
+}
+

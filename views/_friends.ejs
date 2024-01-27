@@ -1,0 +1,33 @@
+<!-- <link rel="stylesheet" href="/css/friends.css"> -->
+<link rel="stylesheet" href="<%= assetPath('css/friends.css') %>">
+<div>
+    <div id="users">
+        <h2>Users</h2>
+        <ul>
+            <% for(let k=0; k<userList.length; k++){ %>
+                <li><a href="/users/profile/<%=userList[k].id%>"><%=userList[k].name%></a></li>
+            <%}%>    
+        </ul>
+    </div>
+    
+    <hr>
+    <div id="followers">
+        <h2>Followers - <%=followers.length%></h2>
+        <ul>
+            <% for(let k=0; k<followers.length; k++){ %>
+                <li><a href="/users/profile/<%=followers[k].from._id%>"><%=followers[k].from.name%></a></li>
+            <%}%> 
+        </ul>
+    </div>
+    
+    <hr>
+    <div id="following">
+        <h2>Following - <%=following.length%></h2>
+        <ul>
+            <% for(let k=0; k<following.length; k++){ %>
+                <li><a href="/users/profile/<%=following[k].to._id%>"><%=following[k].to.name%></a></li>
+            <%}%> 
+        </ul>
+    </div>
+    
+</div>

@@ -1,0 +1,44 @@
+<!-- <link rel="stylesheet" href="/css/home.css"> Previously followed this type-->
+<link rel="stylesheet" href="<%= assetPath('css/home.css') %>">
+<link rel="stylesheet" href="<%= assetPath('css/chatBox.css') %>">
+
+<section id="feed-posts">
+    <div id="posts">
+        <h2>Posts</h2>
+        <% if(locals.user){ %>
+        <form action="/posts/new_post" method="post" id="new-post-form">
+            <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required id="post-content-area"></textarea>
+            <button type="submit">Post</button>
+        </form>
+        <%}%>
+        <div id="feed-display">
+            <% for(let i=postData.length -1; i>=0 ; i--){ %>
+                <%- include('_post.ejs', { i: i }) -%>
+            <%}%>
+        </div>
+    </div>
+    <div id="info">
+        <% if(locals.user){ %>
+            <%-include('_friends')-%>
+        <%}%>
+    </div>
+    <%-include('chat_box')-%>
+</section>
+<!-- <script src="/js/home_posts.js"></script>
+<script src="/js/home_comments.js"></script> -->
+
+<!-- importing this script for creating the comments -->
+<script src="<%= assetPath('js/home_posts.js') %>" ></script>
+<script src="<%= assetPath('js/home_comments.js') %>"></script>
+
+<!-- <script src="/js/chat_engine.js"></script> -->
+<script src="<%= assetPath('js/chat_engine.js') %>"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js" ></script>
+<% if(locals.user){%>
+    <script>
+        
+            new ChatEngine('user-chat-box','<%=locals.user.email%>');
+    
+    </script>
+<%}%> 

@@ -1,0 +1,26 @@
+<!-- <link rel="stylesheet" href="/css/users.css"> -->
+<link rel="stylesheet" href="<%= assetPath('css/users.css') %>">
+
+<img src="<%=user.avatar%>" alt="<%=user.name%>" width="100px" height="100px">
+<% if(user.id == profile_data.id){ %>
+    <form action="/users/editinfo/<%= user.id %>" method="post" enctype="multipart/form-data">
+        <label for="na">Name:</label>
+        <input type="text" name="name" id="na" value="<%= profile_data.name%>" required>
+        <br>
+        <label for="em">Email:</label>
+        <input type="email" name="email" id="em" value="<%= profile_data.email%>" required><br>
+        <input type="file" name="avatar" id="" placeholder="Profile Picture">
+        <input type="submit" value="Edit">
+    </form>
+<%}else{%>
+<h2><%= profile_data.name%></h2>
+<h2><%= profile_data.email%></h2>
+    <%if(follower){%>
+        <p><%=profile_data.name%> is following you</p>
+    <%}%>
+    <% if(following){%>
+        <a href="/users/follow?from=<%=user.id%>&to=<%=profile_data.id%>">UnFollow</a>
+    <%}else{%>
+        <a href="/users/follow?from=<%=user.id%>&to=<%=profile_data.id%>">Follow</a>
+    <%}%>
+<%}%>

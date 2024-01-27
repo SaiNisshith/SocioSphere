@@ -1,0 +1,1 @@
+#feed-posts{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-around}#feed-posts #posts{min-width:70vw}#feed-posts #info{padding:5px;border-left:2px dashed black}@media screen and (max-width: 665px){#feed-posts #info{display:none}}

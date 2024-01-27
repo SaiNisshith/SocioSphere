@@ -1,0 +1,44 @@
+$dark-background: #1a1a1a;
+$light-text: #ffffff;
+$dark-text: #cccccc;
+$accent-color: #3498db;
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.delete-post-button {
+  text-decoration: none;
+  color: $accent-color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.like-toggle-button {
+  text-decoration: none;
+  color: $accent-color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.dark-theme {
+  background-color: $dark-background;
+  color: $light-text;
+
+  li {
+    color: $dark-text;
+  }
+
+  .delete-post-button,
+  .like-toggle-button {
+    color: $accent-color;
+  }
+}

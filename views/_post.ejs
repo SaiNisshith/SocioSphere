@@ -1,0 +1,22 @@
+
+<ul id="post-<%=postData[i].id%>">
+    <% if(locals.user && locals.user.id==postData[i].user.id) {%>
+        <li><a class="delete-post-button"  href="/posts/deletepost/<%=postData[i].id%>">X</a></li>
+    <%}%>
+    <li><%= postData[i].content %></li>
+    <li><%=postData[i].user.name %></li>
+    <li><%= postData[i].user.email %></li>
+    <li><%=postData[i].createdAt%></li>
+    <li>
+        <span id="post-likes-display-<%=postData[i].id%>-<%=i%>"><%=postData[i].likes.length%></span>
+        <span>&nbsp;Likes</span>
+        <% if(locals.user){ %>
+            <a href="/likes/toggle?id=<%=postData[i].id%>&type=Post" class="like-toggle-button" data-id="post-likes-display-<%=postData[i].id%>-<%=i%>">Like</a>
+        <%}%>
+    </li>
+    <li>
+        <%- include('_comment',{i:i}) -%>
+        
+    </li>
+</ul>
+
