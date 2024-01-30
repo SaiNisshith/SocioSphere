@@ -23,8 +23,8 @@ const development = {
         port: 587,
         secure: false,
         auth: {
-          user: "sainisshith@gmail.com",
-          pass: "izht vfno avnp clku",
+          user: process.env.SOCIOSPHERE_GMAIL,
+          pass: process.env.SOCIOSPHERE_GMAIL_PASSWORD,
         },
       },
     GOOGLE_CLIENT_ID : "77512752449-iafedi6p6upbtchisbqn8efnd3150b0u.apps.googleusercontent.com",
