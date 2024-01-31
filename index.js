@@ -6,7 +6,6 @@ const cookie = require('cookie-parser');
 const sassMiddleware = require('node-sass-middleware');
 const customMiddleWare = require('./config/middleware');
 const app = express();
-require('./config/view-helpers')(app);
 const port = 8000;
 const path = require('path');
 
