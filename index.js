@@ -54,7 +54,7 @@ app.use(express.static(env.asset_path));
 //need to add this before routes as they gets assosiated with all the layouts
 app.use(expressLayouts);
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookie());
 //make the uploads available to the browser
 app.use('/uploads',express.static(__dirname+'/uploads'))
